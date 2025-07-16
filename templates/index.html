@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modelo ML</title>
+  <!-- <link rel="stylesheet" href="../static/style.css" /> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <style>
+      body {
+        background-color: #FAFAFA;
+        min-height: 100vh;
+      }
+
+      .contenido {
+        padding: 2rem;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #ccc;
+      }
+    </style>
+  </head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  <div class="container py-5">
+    <div class="contenido">
+      <header>
+          <style>
+            .navbar-custom {
+              background-color: #263238;
+            }
+
+            .navbar-custom .navbar-brand,
+            .navbar-custom .nav-link {
+              color: #FAFAFA !important;
+            }
+
+            .navbar-custom .nav-link:hover {
+              color: #4DB6AC !important;
+            }
+            .carousel-inner img {
+              width: 100%;
+              max-height: 400px;
+              object-fit: cover;
+            }
+            #carouselExampleDark {
+              max-width: 100%;
+              margin: 0 auto; /* Centrar en la página */
+            }
+
+   
+            .btn-github {
+              font-weight: bold;
+              background-color: #FDDD0D;
+              color: #263238;
+              border: none;
+            }
+
+            .btn-github:hover {
+              font-weight: bold;
+              background-color: #DEC102; /* Un tono más claro al pasar el mouse */
+              color: #263238;
+            }
+
+            .btn-predecir {
+              font-weight: bold;
+              background-color: #263238;
+              color: #FAFAFA;
+            }
+            .btn-predecir:hover {
+              font-weight: bold;
+              background-color: #182025; /* Un tono más oscuro al pasar el mouse */
+              color: #FAFAFA;
+            }
+
+            .navbar-custom .navbar-brand{
+              font-weight: bold;
+              color: #4DB6AC !important;
+            }
+
+
+
+          </style>
+
+          <nav class="navbar navbar-expand-lg navbar-custom">
+            <div class="container-fluid">
+              <a class="navbar-brand">FraudIQ</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-link active" aria-current="page" >Home</a>
+                  <a class="nav-link" href="#acerca_de">Acerca de</a>
+                  <a class="nav-link" href="#benchmarks">Benchmarks</a>
+                  <a class="nav-link" href="#predecir">Predecir</a>
+                  <a class="nav-link" href="https://github.com/MrDeybby/fraudiq" target="_blank">GitHub</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+
+      </header>
+
+        <div id="carouselExampleDark" class="carousel carousel-dark slide">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+              <img src="static/images/img1.jpg" class="d-block w-100" alt="Slice 1">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>First slide label</h5>
+                <p>Some representative placeholder content for the first slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="static/images/dog.png" class="d-block w-100" alt="Slice 2">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Second slide label</h5>
+                <p>Some representative placeholder content for the second slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="static/images/img1.jpg" class="d-block w-100" alt="Slice 3">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>Some representative placeholder content for the third slide.</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+        <section id="acerca_de">
+          <div class="container">
+            <h2>Acerca de</h2>
+            <p>Nuestro modelo es un programa informático que aplica un algoritmo a los datos para reconocer patrones y hacer predicciones sin intervención humana.</p>
+            <p>El Machine Learning o aprendizaje automático es una subcategoría de la inteligencia artificial. Consiste en dejar que los algoritmos descubran patrones en conjuntos de datos y mejoren con el tiempo.</p>
+            <div class="d-grid gap-2">
+              <a href="https://github.com/MrDeybby/fraudiq" target="_blank" class="btn btn-github" type="button">REPOSITORIO DE GITHUB</a>
+            </div>
+            
+          </div>
+        </section>
+
+        <section id="benchmarks">
+          <div class="container">
+            <h2>Benchmarks</h2>
+            p>Nuestro modelo es un programa informático que aplica un algoritmo a los datos para reconocer patrones y hacer predicciones sin intervención humana.</p>
+            <p>El Machine Learning o aprendizaje automático es una subcategoría de la inteligencia artificial. Consiste en dejar que los algoritmos descubran patrones en conjuntos de datos y mejoren con el tiempo.</p>
+            <p>A continuación los resultados:</p>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Modelo</th>
+                  <th>Inferencia</th>
+                  <th>Accuracy</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>KNN</td>
+                  <td>12.4 s</td>
+                  <td>0.85</td>
+                </tr>
+                <tr>
+                  <td>Naive Bayes</td>
+                  <td>15.2 s</td>
+                  <td>0.70</td>
+                </tr>
+                <tr>
+                  <td>Decision Tree</td>
+                  <td>10.3 s</td>
+                  <td>0.72</td>
+                </tr>
+              </tbody>
+            </table>
+            
+          </div>
+        </section>
+
+        <section id="predecir">
+          <div class="container">
+            <h2>Modelo en Producción</h2>
+            <img src="static/images/img1.jpg" class="rounded mx-auto d-block" alt="Imagen" style="width: 100%; max-height: 200px; object-fit: cover;">
+            <form >
+              <label class="form-label" for="Pregunta 1">Pregunta 1</label>
+              <input class="form-control" type="text" name="Pregunta 1" placeholder="a">
+
+              
+              <!-- <label class="form-label" for="csv">Cargar CSV</label> -->
+              <button class="form-control" type="button" onclick="document.getElementById('csv').click();" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; background-color: #FDDD0D; color: #263238;">
+                Cargar CSV
+                <input  class="btn btn-primary" type="file" id="csv" accept=".csv" style="display: none;"/>
+              </button>
+
+              <label class="form-label" for="Pregunta 2">Pregunta 2</label>
+              <input  class="form-control" type="text" name="Pregunta 2" placeholder="a">
+
+              <label class="form-label" for="Pregunta 3">Pregunta 3</label>
+              <input  class="form-control" type="text" name="Pregunta 3" placeholder="a">
+
+              <label class="form-label" for="Pregunta 4">Pregunta 4</label>
+              <input  class="form-control" type="text" name="Pregunta 4" placeholder="a">
+
+              <label class="form-label" >Pregunta 1</label>
+              <select  class="form-control" ><option>Opción 1</option></select>
+
+              <label class="form-label">Pregunta 2</label>
+              <select  class="form-control"><option>Opción 1</option></select>
+
+              <label class="form-label" >Pregunta 3</label>
+              <select  class="form-control" ><option>Opción 1</option></select>
+              
+              <div class="d-grid gap-2">
+                <button class="btn btn-predecir" type="submit">PREDECIR</button>
+              </div>
+
+              
+            </form>
+
+            <p>Su predicción final es de: <strong>Multiple</strong></p>
+          </div>
+      </section>
+
+      <footer class="text-white text-center py-4" style="background-color: #263238;">
+        <div class="container" >
+          
+          <p class="mb-1">© 2025 Deybby Rosario y Sarah Peña. Todos los derechos reservados.</p>
+          <div>
+            <a href="#acerca" class="text-white me-3">Acerca de</a>
+            <a href="#contacto" class="text-white me-3">Contacto</a>
+            <a href="https://github.com/MrDeybby/fraudiq" class="text-white" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+</body>
+</html>
