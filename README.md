@@ -39,5 +39,5 @@ Actualmente estamos estableciendo la estructura base del repositorio. El código
 | Nombre        | Rol                           | Linkedln / Contacto            |
 |---------------|-------------------------------|-------------------------------|
 | Deybby R.     | Desarrollador Web 		| [@deybby](https://www.linkedin.com/in/deybby-rosario/) |
-| [Nombre]      | Ingeniera de Machine Learning | [@sarah](https://www.linkedin.com/in/sarah-v-pena/) |
+| Sarah P.      | Ingeniera de Machine Learning | [@sarah](https://www.linkedin.com/in/sarah-v-pena/) |
 
