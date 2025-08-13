@@ -140,6 +140,7 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
+          <p><br></p> <!-- Salto de linea -->
         </div>
 
         <section id="acerca_de">
@@ -150,43 +151,109 @@
             <div class="d-grid gap-2">
               <a href="https://github.com/MrDeybby/fraudiq" target="_blank" class="btn btn-github" type="button">REPOSITORIO DE GITHUB</a>
             </div>
-            
+            <p><br></p> <!-- Salto de linea -->
           </div>
         </section>
 
         <section id="benchmarks">
           <div class="container">
             <h2>Benchmarks</h2>
-            p>Nuestro modelo es un programa informático que aplica un algoritmo a los datos para reconocer patrones y hacer predicciones sin intervención humana.</p>
-            <p>El Machine Learning o aprendizaje automático es una subcategoría de la inteligencia artificial. Consiste en dejar que los algoritmos descubran patrones en conjuntos de datos y mejoren con el tiempo.</p>
-            <p>A continuación los resultados:</p>
             <table class="table table-striped">
               <thead>
-                <tr>
+                            <tr>
                   <th>Modelo</th>
-                  <th>Inferencia</th>
                   <th>Accuracy</th>
+                  <th>Precision</th>
+                  <th>Recall</th>
+                  <th>F1-Score</th>
+                  <th>ROC AUC</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>KNN</td>
-                  <td>12.4 s</td>
-                  <td>0.85</td>
+                  <td>LightGBM</td>
+                  <td>0.9968</td>
+                  <td>0.9763</td>
+                  <td>0.9895</td>
+                  <td>0.9828</td>
+                  <td>0.9991</td>
                 </tr>
                 <tr>
-                  <td>Naive Bayes</td>
-                  <td>15.2 s</td>
-                  <td>0.70</td>
+                  <td>Random Forest</td>
+                  <td>0.9936</td>
+                  <td>0.9821</td>
+                  <td>0.9479</td>
+                  <td>0.9647</td>
+                  <td>0.9989</td>
                 </tr>
                 <tr>
-                  <td>Decision Tree</td>
-                  <td>10.3 s</td>
-                  <td>0.72</td>
+                  <td>Neural Network (MLP)</td>
+                  <td>0.9894</td>
+                  <td>0.9606</td>
+                  <td>0.9223</td>
+                  <td>0.9410</td>
+                  <td>0.9962</td>
+                </tr>
+                <tr>
+                  <td>SVM</td>
+                  <td>0.9760</td>
+                  <td>0.9506</td>
+                  <td>0.7774</td>
+                  <td>0.8553</td>
+                  <td>0.9788</td>
+                </tr>
+                <tr>
+                  <td>Nearest Neighbors</td>
+                  <td>0.9710</td>
+                  <td>0.8964</td>
+                  <td>0.7706</td>
+                  <td>0.8288</td>
+                  <td>0.9458</td>
+                </tr>
+                <tr>
+                  <td>Logistic Regression</td>
+                  <td>0.9696</td>
+                  <td>0.9578</td>
+                  <td>0.6963</td>
+                  <td>0.8064</td>
+                  <td>0.9825</td>
+                </tr>
+                <tr>
+                  <td>Gaussian Naive Bayes</td>
+                  <td>0.5180</td>
+                  <td>0.1583</td>
+                  <td>0.9970</td>
+                  <td>0.2733</td>
+                  <td>0.9168</td>
                 </tr>
               </tbody>
             </table>
-            
+            <p><br></p> <!-- Salto de linea -->
+            <h5>El Ganador Indiscutible: LightGBM</h5>
+            <p>
+Este modelo es la elección clara y superior por varias razones clave, especialmente en el contexto de la detección de fraude:</p>
+
+<p><b>F1-Score (0.9829):</b> El más alto de todos, indicando el mejor balance posible entre Precisión y Recall. Esta suele ser la métrica más importante para problemas desbalanceados.</p>
+<p><b>Recall (0.9895):</b> ¡Excepcional! Esto significa que el modelo fue capaz de identificar correctamente el <b>98.9%</b> de todas las transacciones fraudulentas reales. En un escenario real, esto se traduce en minimizar las pérdidas económicas al no dejar pasar los fraudes.</p>
+<p><b>Precision (0.9763):</b> También de primer nivel. Significa que cuando el modelo dijo que una transacción era fraudulenta, acertó el <b>97.6%</b> de las veces. Esto es crucial para la eficiencia operativa, ya que minimiza el tiempo que los analistas pierden investigando falsas alarmas.</p>
+<p><b>ROC AUC (0.9991):</b> Un valor casi perfecto, lo que demuestra su excelente capacidad para distinguir entre clases en todos los umbrales de decisión.</p>
+
+<p><br></p> <!-- Salto de linea -->
+<h5>Menciones Honoríficas</h5>
+
+<p><b>Random Forest:</b> Un segundo lugar muy sólido. Su <b>Precisión</b> es ligeramente superior a la de LightGBM, pero su <b>Recall</b> es un poco más bajo (94.7%). Sigue siendo un modelo excelente, pero LightGBM lo supera en la métrica más crítica para este problema: la capacidad de capturar la mayor cantidad de fraudes.</p>
+
+<p><b>Neural Network (MLP):</b> Un buen tercer lugar. Es un modelo robusto y de buen rendimiento, pero en este caso, fue superado por los modelos de ensamble (Random Forest y LightGBM), que a menudo destacan en datos tabulares como el nuestro.</p>
+
+<p><br></p> <!-- Salto de linea -->
+<h5>Análisis de los modelos con menos rendimiento</h5>
+
+<P><b>SVM y Nearest Neighbors:</b> Su principal debilidad fue un <b>Recall</b> significativamente más bajo (~77%). Esto significa que, aunque eran razonablemente precisos cuando detectaban un fraude, dejaron pasar casi una de cada cuatro transacciones fraudulentas, lo cual es inaceptable para un sistema de detección de fraude.</P>
+
+<P><b>Logistic Regression:</b> Aunque es muy rápido, su bajo <b>Recall</b> (69.6%) lo descarta como una opción final. Demuestra que el problema tiene relaciones no lineales que este modelo no puede capturar eficazmente.</P>
+
+<P><b>Gaussian Naive Bayes:</b> Este modelo ilustra un caso clásico de "falso rendimiento". Su <b>Recall</b> es casi perfecto (99.7%), pero su <b>Precisión</b> es abismal (15.8%). En la práctica, esto significaría que para atrapar a casi todos los estafadores, el sistema inundaría a los analistas con una cantidad masiva de falsas alarmas (más de 4 de cada 5 alertas serían incorrectas), haciendo que el sistema sea inútil por el "ruido" que genera.</P>
+<p><br></p> <!-- Salto de linea -->
           </div>
         </section>
 
@@ -197,7 +264,9 @@
             <form >
               <label class="form-label" for="Pregunta 1">Pregunta 1</label>
               <input class="form-control" type="text" name="Pregunta 1" placeholder="a">
-
+              
+              <label for="cantidad">Cantidad:</label>
+              <input type="number" id="cantidad" name="cantidad">
               
               <!-- <label class="form-label" for="csv">Cargar CSV</label> -->
               <button class="form-control" type="button" onclick="document.getElementById('csv').click();" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; background-color: #FDDD0D; color: #263238;">
