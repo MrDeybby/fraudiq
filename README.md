@@ -1,43 +1,87 @@
-# FraudIQ - Landing Page
+# FraudIQ - Sistema de Detección de Fraude
 
-Bienvenido al repositorio oficial de la **FraudIQ**.  
-Este sitio servirá como una plataforma informativa e interactiva donde los usuarios podrán:
+## Descripción del Proyecto
 
-- Conocer cómo funciona el modelo de inteligencia artificial.
-- Entender el impacto del sistema en la prevención de fraudes.
-- Probar el modelo directamente desde el navegador.
+FraudIQ es una solución de machine learning diseñada para detectar transacciones fraudulentas en tiempo real. Utilizando algoritmos avanzados de aprendizaje automático, nuestro sistema analiza patrones de transacciones para identificar actividades sospechosas con alta precisión.
 
----
+## Características Principales
 
-## 🚀 ¿Qué es FraudIQ?
+- **Múltiples Modelos ML**: Implementación de diversos algoritmos (Random Forest, LightGBM, SVM, etc.)
+- **API REST**: Endpoints para predicciones en tiempo real
+- **Interfaz Web**: Dashboard interactivo para pruebas y visualización
+- **Pipeline de Preprocesamiento**: Transformación automática de datos de entrada
+- **Logging Detallado**: Sistema de registro para monitoreo y debugging
 
-**FraudIQ** es un proyecto impulsado por inteligencia artificial que busca identificar patrones de fraude en transacciones digitales. A través de un modelo de machine learning, detectamos comportamientos sospechosos para reducir riesgos y prevenir pérdidas financieras.
+## ecnologías Utilizadas
 
-La landing page es el punto de entrada para presentar este proyecto a usuarios, desarrolladores e inversores.
+- **Backend**: Python, Flask
+- **Machine Learning**: scikit-learn, LightGBM
+- **Frontend**: HTML5, Bootstrap 5
+- **Datos**: pandas, NumPy
+- **Serialización**: joblib
 
----
+## Requisitos Previos
 
-## ¿Qué tendrá esta página?
+```bash
+Python 3.11+
+pip (última versión)
+Entorno virtual (venv)
+```
 
-- Sección de presentación del modelo  
-- Tabla comparativa de diferentes modelos de machine learning 
-- Formulario para probar el modelo en vivo  
-- Resultados en tiempo real  
-- Presentación de los creadores
+## 🔧 Instalación
 
----
+1. **Clonar el repositorio**
+```bash
+git clone https://github.com/tu-usuario/FraudIQ.git
+cd FraudIQ
+```
 
-## Estado del proyecto
+2. **Crear y activar entorno virtual**
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+```
 
-🔧 **En desarrollo inicial**  
-Actualmente estamos estableciendo la estructura base del repositorio. El código fuente, tanto de frontend como de backend, se irá integrando en las próximas etapas por el equipo de desarrollo.
+3. **Instalar dependencias**
+```bash
+pip install -r requirements.txt
+```
 
----
+4. **Ejecutar la aplicación**
+```bash
+python app.py
+```
 
-## Equipo de desarrollo
+## Estructura del Proyecto
 
-| Nombre        | Rol                           | Linkedln / Contacto            |
-|---------------|-------------------------------|-------------------------------|
-| Deybby R.     | Desarrollador Web 		| [@deybby](https://www.linkedin.com/in/deybby-rosario/) |
-| Sarah P.      | Ingeniera de Machine Learning | [@sarah](https://www.linkedin.com/in/sarah-v-pena/) |
+```
+FraudIQ/
+├── app.py                  # Aplicación principal Flask
+├── ml_engineering/        
+│   ├── data_processing/   # Scripts de procesamiento de datos
+│   └── model_training/    # Modelos entrenados y notebooks
+├── static/                # Recursos estáticos
+├── templates/             # Plantillas HTML
+└── requirements.txt       # Dependencias del proyecto
+```
+
+## Uso del Sistema
+
+1. Acceder a la interfaz web (http://localhost:5000)
+2. Ingresar los datos de la transacción
+3. Seleccionar el modelo a utilizar
+4. Obtener la predicción y probabilidad de fraude
+
+## Rendimiento de los Modelos
+
+| Modelo | Precisión | Recall | F1-Score |
+|--------|-----------|--------|----------|
+| LightGBM | 97.63% | 98.95% | 98.29% |
+| Random Forest | 98.12% | 94.70% | 96.37% |
+| Neural Network | 96.54% | 93.82% | 95.16% |
+
+## Equipo de Desarrollo
+
+- **Deybby Rosario** - Desarrollador Web - [@deybby](https://www.linkedin.com/in/deybby-rosario/)
+- **Sarah Peña** - Ingeniera ML - [@sarah](https://www.linkedin.com/in/sarah-v-pena/)
 
