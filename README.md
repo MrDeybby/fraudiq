@@ -15,7 +15,7 @@ FraudIQ es una solución de machine learning diseñada para detectar transaccion
 ## ecnologías Utilizadas
 
 - **Backend**: Python, Flask
-- **Machine Learning**: scikit-learn, LightGBM
+- **Machine Learning**: scikit-learn
 - **Frontend**: HTML5, Bootstrap 5
 - **Datos**: pandas, NumPy
 - **Serialización**: joblib
@@ -76,9 +76,9 @@ FraudIQ/
 
 | Modelo | Precisión | Recall | F1-Score |
 |--------|-----------|--------|----------|
-| LightGBM | 97.63% | 98.95% | 98.29% |
 | Random Forest | 98.12% | 94.70% | 96.37% |
 | Neural Network | 96.54% | 93.82% | 95.16% |
+| SVM | 97.60% | 95.06% | 77.74% |
 
 ## Equipo de Desarrollo
 
